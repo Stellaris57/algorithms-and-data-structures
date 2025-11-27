@@ -107,3 +107,41 @@ void delete_iterate(Node* head) {
 	}
 }
 
+
+
+
+
+int main() {
+    std::cout << "=== ТЕСТ РЕКУРСИВНЫХ ФУНКЦИЙ ===" << std::endl;
+    std::cout << "Введите числа для рекурсивного списка (0 для окончания): ";
+    Node* list1 = create_recursive();
+    
+    std::cout << "Рекурсивный вывод: ";
+    print_recursive(list1);
+    std::cout << std::endl;
+    
+    std::cout << "Итеративный вывод вперед: ";
+    print_iterate_forward(list1);
+    
+    std::cout << "Итеративный вывод назад: ";
+    print_iterate_backward(list1);
+    
+    // Тестируем пустой список
+    std::cout << "Тест пустого списка: ";
+    print_iterate_backward(nullptr);
+    
+    std::cout << "Удаление рекурсивное..." << std::endl;
+    delete_recursive(list1);
+    
+    std::cout << "\n=== ТЕСТ ИТЕРАТИВНЫХ ФУНКЦИЙ ===" << std::endl;
+    std::cout << "Введите числа для итеративного списка (0 для окончания): ";
+    Node* list2 = create_iterate();
+    
+    std::cout << "Итеративный вывод вперед: ";
+    print_iterate_forward(list2);
+    
+    std::cout << "Удаление итеративное..." << std::endl;
+    delete_iterate(list2);
+    
+    return 0;
+}
